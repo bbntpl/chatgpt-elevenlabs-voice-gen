@@ -56,7 +56,7 @@ end
 
 function interact_with_gpt(prompt)
   chatgpt_model = "gpt-3.5-turbo"
-  chatgpt_system = "You are a helpful assistant on a conversation. Answer should be not too long. Be ironic and acid"
+  chatgpt_system = "You are a helpful assistant on a conversation. Provide concise and clear answers without using many words."
 
   headers = Dict(
     "Content-Type" => "application/json",
@@ -83,7 +83,6 @@ end
 
 # Text-to-speech function
 function text_to_speech(text)
-  CHUNK_SIZE = 1024
   url = "https://api.elevenlabs.io/v1/text-to-speech/$selected_voice_id"
 
   headers = Dict(
@@ -96,7 +95,7 @@ function text_to_speech(text)
     "text" => text,
     "model_id" => "eleven_multilingual_v1",
     "voice_settings" => Dict(
-      "stability" => 0.4,
+      "stability" => 0.7,
       "similarity_boost" => 1.0
     )
   )

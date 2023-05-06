@@ -24,9 +24,15 @@ Pkg.add("FileIO")
 Pkg.add("DotEnv")
 ```
 
-3. In the main.jl file, change the value of the 'target_name' variable to match the name of the voice you desire to use
+3. In the main.jl file, change the value of the following variables to match to configure based on your needs:
 
 ```julia
-target_name = "desired voice name"
+	target_name = "desired voice name"
+  chatgpt_model = "gpt model version"
+  chatgpt_system = "role of chatgpt"
+	"voice_settings" => Dict(
+    "stability" => 0.5,
+    "similarity_boost" => 1.0
+  )
 ```
-to your desired voice.
+
